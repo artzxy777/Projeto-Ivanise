@@ -157,7 +157,7 @@ nomes_pagamentos = {
     "3": "Pix",
 }
 
-
+# Loop para confirmação e possíveis alterações
 while True:
     print("\n========== Resumo do agendamento ==========")
     print(f"Cliente: {nome}")
@@ -167,6 +167,7 @@ while True:
     print(f"Pagamento: {nomes_pagamentos[pagamento]}")
     print(f"Valor final: R$ {valor_final:.2f}")
 
+    # Loop para confirmação das informações
     while True:
         confirmacao = input(
             "\nConfirma as informações? (S/N): "
@@ -179,6 +180,7 @@ while True:
         print("\nAgendamento confirmado com sucesso!")
         break
 
+    # Opções de alteração
     print("\nO que você deseja alterar?")
     print("1 - Nome")
     print("2 - Modelo do carro")
@@ -187,16 +189,19 @@ while True:
     print("5 - Forma de pagamento")
     print("6 - Tava so olhando, vou sair e ir no concorrente mesmo.")
 
+    # Caso o cliente coloque um numero inválido, o sistema vai pedir para ele colocar novamente
     while True:
         alteracao = input("\nEscolha uma opção: ").strip()
         if alteracao in {"1", "2", "3", "4", "5", "6"}:
             break
         print("\nErro: escolha uma opção entre 1 e 6.")
 
+    # Resposta para o fudido que quer ir no concorrente
     if alteracao == "6":
         print("\nEntao vai se foder, vai no concorrente mesmo, 7 anos de extremo azar pra você!")
         break
 
+    # Loop Para o Nome
     if alteracao == "1":
         while True:
             nome = input("Digite seu nome: ").strip()
@@ -204,6 +209,7 @@ while True:
                 break
             print("Erro: digite um nome válido, sem números e sem deixar em branco.")
 
+    # Loop Para o Modelo do Carro
     elif alteracao == "2":
         while True:
             carro = input(
@@ -213,6 +219,7 @@ while True:
                 break
             print("Erro: escolha apenas um número entre 1 e 4.")
 
+        # Cálculo do preço com base no tipo de carro 2
         if carro == "1":
             fator_carro = 1.10
         elif carro == "2":
@@ -232,6 +239,7 @@ while True:
         else:
             preco = preco_premium
 
+    # Loop Para o Tipo de Lavagem
     elif alteracao == "3":
         while True:
             lavagem = input(
@@ -250,6 +258,7 @@ while True:
         else:
             preco = preco_premium
 
+    # Loop Para o Dia do Agendamento
     elif alteracao == "4":
         print("\nDisponibilidade para agendamento:")
         for dia, nome_dia in dias_semana.items():
@@ -269,6 +278,7 @@ while True:
             print("Erro: esse dia está indisponível ou a opção é inválida.")
         print(f"Você escolheu agendar para {dias_semana[agendamento]}.")
 
+    # Loop Para o Tipo de Pagamento
     else:
         while True:
             pagamento = input(
