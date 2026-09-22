@@ -196,9 +196,9 @@ while True:
             break
         print("\nErro: escolha uma opção entre 1 e 6.")
 
-    # Resposta para o fudido que quer ir no concorrente
+    # Resposta Concorrente
     if alteracao == "6":
-        print("\nEntao vai se foder, vai no concorrente mesmo, 7 anos de extremo azar pra você!")
+        print("\nQue pena! Esperamos que volte em breve.")
         break
 
     # Loop Para o Nome
